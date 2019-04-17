@@ -17,9 +17,9 @@ public class Main {
 
     static String topic_temp       = "measurement/temperature";
     static String topic_humidity   = "measurement/humidity";
-    static int qos             = 2;
-    static String broker       = "tcp://10.19.4.127:1883";
-    static String clientId     = "Šokre_Gateway";
+    static int qos                 = 2;
+    static String broker           = "tcp://10.19.4.127:1883";
+    static String clientId         = "Šokre_Gateway";
 
     static MemoryPersistence persistence = new MemoryPersistence();
 
@@ -110,7 +110,6 @@ public class Main {
             xbee.close();
         }
     }
-
 
     public static void main(String[] args) {
         try {
