@@ -1,0 +1,11 @@
+3.
+a) Adresa MQTT brokera se definira uri-em oblika: "tcp://10.19.4.127:1883", tj. protokolom TCP, portom 1883 i IP adresom računala na kojem je broker pokrenut
+b) Pri slanju poruke definiramo kvalitetu usluge QoS (Quality of Service), topic na koji objavljujemo poruku,
+    a poruku šaljemo kao niz bajtova. Poruci je također moguće postaviti ID pozivom metode setId(int messageId).
+    Ako želimo da MQTT server(broker) zadrži poruku koristimo metodu setRetained(true). Defaultna vrijednost je false
+c) Željena kvaliteta usluge postavlja se pozivom setQos(qos) metode nad instancom klase MqttMessage. Parametar qos može biti 0,1 ili 2.
+d) Bez obzira na kvalitetu usluge(0, 1 ili 2) svi paketi su poslani zbog bliske veze između senzora i gateway-a
+
+4. Nakon odspajanja objavljivača s mreže dolazi do očekivane greške i poruke ne dolaze do odredišta:
+    ErrorUnable to connect to server (32103) - java.net.ConnectException: Network is unreachable (connect failed)
+   Nakon ponovnog spajanja nove poruke uspješno dolaze do odredišta.
